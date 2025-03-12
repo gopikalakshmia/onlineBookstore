@@ -1,13 +1,21 @@
 @model List<Category> 
 
-<h1>Category</h1>
+<div class="container">
+    <div class="row">
+<div class="col-9">
+<h2>Catergory list</h2>
+</div>
+<div class="col-3">
+<a asp-controller="category" asp-action="create" class="btn btn-primary p-3"><i class="bi bi-plus-circle-dotted"></i> Add New Category</a>
+</div>
+    </div>
 <table class="table table-striped">
     <tr>
         <th>
             Id
         </th>
         <th>
-            Name
+            Name 
         </th>
         
     </tr>
@@ -18,3 +26,4 @@
         </tr>
     }
 </table>
+</div>

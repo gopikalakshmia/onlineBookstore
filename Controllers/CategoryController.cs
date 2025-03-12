@@ -23,8 +23,21 @@ public class CategoryController : Controller
        List<Category> categoriesList=_db.Categories.ToList();
         return View(categoriesList);
     }
-
-    
+//category/create
+    public IActionResult Create(){
+        return View();
+    }
+//Form submission
+    [HttpPost]
+    public IActionResult Create(Category obj){
+        if(ModelState.IsValid){
+            _db.Categories.Add(obj);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        else
+        return View();
+    }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
