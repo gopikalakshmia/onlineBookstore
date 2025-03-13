@@ -12,17 +12,20 @@
 <table class="table table-striped">
     <tr>
         <th>
-            Id
+            Name
         </th>
         <th>
-            Name 
+            Display Order 
         </th>
+        <th></th>
         
     </tr>
     @foreach(var item in Model){
         <tr>
-            <td>@item.Id</td>
             <td>@item.Name</td>
+            <td>@item.DisplayOrder</td>
+            <td><a asp-asp-controller="category" asp-action="edit" asp-route-Id="@item.Id"><i class="bi bi-pencil-square"></i> Edit</a> |  <a asp-controller="category" asp-action="delete" asp-route-Id="@item.Id"><i class="bi bi-trash"></i> Delete</a></td>
+            
         </tr>
     }
 </table>
